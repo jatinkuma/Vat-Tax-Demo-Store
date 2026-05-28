@@ -1,63 +1,109 @@
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link
-  rel="stylesheet"
-  href="{{ 'component-cart-notification.css' | asset_url }}"
-  media="print"
-  onload="this.media='all'"
->
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-{%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-{%- endif -%}
-
 {%- style -%}
+  /* ===== ESTS TAX/VAT SWITCHER — DARK HEADER ===== */
+  body {
+    background-color: #0C0C0C !important;
+    color: #F1F5F9 !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+  }
+
   .header-wrapper {
     position: fixed !important;
-    top: 24px !important;
+    top: 20px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: auto !important;
-    min-width: 720px;
+    min-width: 760px;
     max-width: 95vw;
-    background: var(--glass-bg) !important;
-    backdrop-filter: var(--glass-blur) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: var(--radius-pill) !important;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04) !important;
+    background: rgba(15, 15, 15, 0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
     z-index: 2000 !important;
-    padding: 6px 12px !important;
+    padding: 6px 8px 6px 20px !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
   .header-wrapper.header--scrolled {
-    top: 12px !important;
-    padding: 4px 10px !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06) !important;
+    top: 10px !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6) !important;
   }
 
   .header {
-    padding: 0 8px !important;
+    padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 40px !important;
+    gap: 32px !important;
     margin: 0 !important;
     max-width: 100% !important;
   }
 
+  /* Logo area */
   .header__logo {
     flex-shrink: 0 !important;
     display: flex !important;
     align-items: center !important;
-    padding-left: 12px !important;
   }
 
+  .vat-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .vat-logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+  }
+
+  .vat-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .vat-logo-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F1F5F9;
+    letter-spacing: -0.3px;
+  }
+
+  .vat-logo-name span {
+    color: #F97316;
+  }
+
+  .vat-logo-tagline {
+    font-size: 10px;
+    color: #64748B;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+  }
+
+  /* Nav links */
   .header__inline-menu {
     flex-grow: 1 !important;
     display: flex !important;
@@ -70,63 +116,109 @@
     padding: 0 !important;
     margin: 0 !important;
     display: flex !important;
-    gap: 4px !important;
+    gap: 2px !important;
     align-items: center !important;
     flex-wrap: nowrap !important;
   }
 
   .header__menu-item {
-    color: var(--text-secondary) !important;
+    color: #94A3B8 !important;
     font-size: 14px !important;
     font-weight: 500 !important;
-    padding: 10px 16px !important;
+    padding: 8px 16px !important;
     text-decoration: none !important;
-    border-radius: var(--radius-pill) !important;
+    border-radius: 9999px !important;
     transition: all 0.2s ease !important;
     display: block !important;
     white-space: nowrap !important;
   }
 
   .header__menu-item:hover {
-    color: var(--text-primary) !important;
-    background: rgba(0, 0, 0, 0.03) !important;
+    color: #F1F5F9 !important;
+    background: rgba(255, 255, 255, 0.06) !important;
   }
 
+  /* VAT Toggle in header */
+  .header__vat-toggle {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .vat-toggle-btn {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .vat-toggle-btn--active {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+  }
+
+  .vat-toggle-btn--inactive {
+    background: transparent;
+    color: #94A3B8;
+  }
+
+  .vat-toggle-btn--inactive:hover {
+    color: #F1F5F9;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Install button */
   .header__actions {
-    padding-right: 6px !important;
+    padding-right: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .header__install-btn {
-    background: var(--gradient-brand) !important;
+    background: linear-gradient(135deg, #F97316, #EA580C) !important;
     color: #ffffff !important;
-    padding: 12px 28px !important;
-    border-radius: var(--radius-pill) !important;
-    font-size: 14px !important;
+    padding: 10px 22px !important;
+    border-radius: 9999px !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
     transition: all 0.3s ease !important;
     display: inline-block !important;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2) !important;
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35) !important;
     white-space: nowrap !important;
+    letter-spacing: 0.1px !important;
   }
 
   .header__install-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3) !important;
-    filter: brightness(1.05);
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.5) !important;
+    filter: brightness(1.08) !important;
   }
 
   @media screen and (max-width: 989px) {
     .header-wrapper {
-      min-width: 90vw;
-      padding: 6px 12px !important;
+      min-width: 92vw;
     }
     .header__menu-item {
-      padding: 8px 12px !important;
+      padding: 7px 12px !important;
       font-size: 13px !important;
     }
     .header {
       gap: 16px !important;
+    }
+    .header__vat-toggle {
+      display: none;
     }
   }
 
@@ -135,7 +227,11 @@
       display: none !important;
     }
     .header-wrapper {
-      min-width: calc(100vw - 40px);
+      min-width: calc(100vw - 32px);
+      padding: 6px 8px 6px 16px !important;
+    }
+    .vat-logo-tagline {
+      display: none;
     }
   }
 {%- endstyle -%}
@@ -143,21 +239,25 @@
 <header-wrapper class="header-wrapper">
   <header class="header">
     <div class="header__logo">
-      <a href="{{ routes.root_url }}" class="header__heading-link link focus-inset">
+      <a href="{{ routes.root_url }}" class="vat-logo-wrap link focus-inset" aria-label="Ests Tax/Vat Switcher - Home">
         {%- if settings.logo != blank -%}
           {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-          {{ settings.logo | image_url: width: 240 | image_tag: class: 'header__heading-logo', alt: logo_alt, style: 'height: auto; width: 120px;' }}
+          {{ settings.logo | image_url: width: 240 | image_tag: class: 'header__heading-logo', alt: logo_alt, style: 'height: 36px; width: auto;' }}
         {%- else -%}
-          <span class="h4" style="font-weight: 800; letter-spacing: -0.04em; color: var(--text-primary); text-transform: uppercase;">{{ shop.name }}</span>
+          <div class="vat-logo-icon" aria-hidden="true">TS</div>
+          <div class="vat-logo-text">
+            <span class="vat-logo-name">Ests Tax/<span>Vat</span> Switcher</span>
+            <span class="vat-logo-tagline">B2B &amp; B2C VAT Pricing</span>
+          </div>
         {%- endif -%}
       </a>
     </div>
 
-    <nav class="header__inline-menu">
+    <nav class="header__inline-menu" aria-label="Main navigation">
       <ul class="header__menu-list" role="list">
         {%- for link in linklists[section.settings.menu].links -%}
           <li>
-            <a href="{{ link.url }}" class="header__menu-item">
+            <a href="{{ link.url }}" class="header__menu-item{% if link.active %} header__menu-item--active{% endif %}">
               {{ link.title | escape }}
             </a>
           </li>
@@ -166,7 +266,13 @@
     </nav>
 
     <div class="header__actions">
-      <a href="https://apps.shopify.com/product-inquiry" class="header__install-btn">Install App</a>
+      <div class="header__vat-toggle" role="group" aria-label="VAT mode selector">
+        <span class="vat-toggle-btn vat-toggle-btn--active">Business</span>
+        <span class="vat-toggle-btn vat-toggle-btn--inactive">Individual</span>
+      </div>
+      <a href="https://apps.shopify.com/vat-switcher" class="header__install-btn" target="_blank" rel="noopener noreferrer">
+        Install Free
+      </a>
     </div>
   </header>
 </header-wrapper>
