@@ -1,192 +1,205 @@
 {%- style -%}
-  .saas-features {
-    padding: var(--space-12) 0 !important;
-    background: #ffffff !important;
+  /* ===== VAT SWITCHER — FEATURES SECTION ===== */
+  .vat-features {
+    padding: 100px 0;
+    background: #0C0C0C;
+    position: relative;
   }
-  .saas-features .collection__title {
-    margin-bottom: 64px !important;
+  .vat-features::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(249,115,22,0.3), transparent);
   }
-  .saas-features .section-label {
-    display: block;
-    color: #6366f1 !important;
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.1em !important;
-    margin-bottom: 16px !important;
+  .vat-features__header {
+    text-align: center;
+    margin-bottom: 64px;
   }
-  .saas-features .title {
-    font-size: 42px !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.03em !important;
-    color: var(--text-primary) !important;
+  .vat-section-label {
+    display: inline-block;
+    color: #F97316;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    padding: 5px 14px;
+    background: rgba(249,115,22,0.1);
+    border: 1px solid rgba(249,115,22,0.2);
+    border-radius: 9999px;
   }
-  .saas-features-grid {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 32px !important;
+  .vat-section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #F1F5F9;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin: 0 0 16px;
   }
-  .saas-feature-card {
-    background: #ffffff !important;
-    border: 1px solid #f1f5f9 !important;
-    border-radius: 20px !important;
-    padding: 32px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    text-align: left !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    height: 100% !important;
+  .vat-section-title span { color: #F97316; }
+  .vat-section-subtitle {
+    font-size: 1.05rem;
+    color: #64748B;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
   }
-  .saas-feature-card:hover {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
-    border-color: #e2e8f0 !important;
+  .vat-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
   }
-  .saas-feature-icon {
-    width: 48px !important;
-    height: 48px !important;
-    background: #f5f3ff !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-bottom: 24px !important;
-    color: #6366f1 !important;
-    flex-shrink: 0 !important;
+  .vat-feature-card {
+    background: #141414;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
   }
-  .saas-feature-title {
-    font-size: 18px !important;
-    font-weight: 700 !important;
-    color: var(--text-primary) !important;
-    margin-bottom: 12px !important;
+  .vat-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(249,115,22,0), transparent);
+    transition: background 0.35s ease;
   }
-  .saas-feature-text {
-    font-size: 15px !important;
-    color: var(--text-secondary) !important;
-    line-height: 1.6 !important;
-    margin: 0 !important;
-    flex-grow: 1 !important;
+  .vat-feature-card:hover {
+    border-color: rgba(249,115,22,0.25);
+    background: #181818;
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(249,115,22,0.1);
   }
+  .vat-feature-card:hover::before {
+    background: linear-gradient(90deg, transparent, rgba(249,115,22,0.6), transparent);
+  }
+  .vat-feature-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(249,115,22,0.1);
+    border: 1px solid rgba(249,115,22,0.2);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: #F97316;
+    flex-shrink: 0;
+  }
+  .vat-feature-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #F1F5F9;
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  .vat-feature-text {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.7;
+    margin: 0;
+    flex-grow: 1;
+  }
+  /* Wide card spanning 2 cols */
+  .vat-feature-card--wide {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .vat-feature-card--wide .vat-feature-icon {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .vat-feature-card--wide .vat-feature-body { flex: 1; }
   @media screen and (max-width: 989px) {
-    .saas-features-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
+    .vat-features-grid { grid-template-columns: repeat(2, 1fr); }
+    .vat-feature-card--wide { grid-column: span 2; }
   }
   @media screen and (max-width: 749px) {
-    .saas-features-grid {
-      grid-template-columns: 1fr !important;
-    }
+    .vat-features-grid { grid-template-columns: 1fr; }
+    .vat-feature-card--wide { grid-column: span 1; flex-direction: column; }
+    .vat-feature-card--wide .vat-feature-icon { margin-bottom: 20px; }
   }
 {%- endstyle -%}
 
-<section class="saas-features">
+<section class="vat-features" aria-labelledby="vat-features-heading">
   <div class="page-width">
-    <div class="collection__title center">
-      <span class="section-label">Features</span>
-      <h2 class="title">Everything you need to grow</h2>
+    <div class="vat-features__header">
+      <span class="vat-section-label">App Features</span>
+      <h2 class="vat-section-title" id="vat-features-heading">
+        Everything you need for<br><span>VAT / Tax Switching</span>
+      </h2>
+      <p class="vat-section-subtitle">
+        Ests Tax/VAT Switcher gives merchants full control over how prices are displayed — no code, no complexity.
+      </p>
     </div>
 
-    <div class="saas-features-grid">
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+    <div class="vat-features-grid">
+
+      <!-- Feature 1 — Toggle -->
+      <div class="vat-feature-card">
+        <div class="vat-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         </div>
-        <h3 class="saas-feature-title">Lightning Fast Setup</h3>
-        <p class="saas-feature-text">Install and go live in under 2 minutes. No coding required, no complex configurations.</p>
+        <h3 class="vat-feature-title">Instant VAT Toggle</h3>
+        <p class="vat-feature-text">Switch between VAT inclusive and exclusive pricing instantly with a single click. Prices update in real-time across your entire storefront.</p>
       </div>
 
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+      <!-- Feature 2 — Popup -->
+      <div class="vat-feature-card">
+        <div class="vat-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
         </div>
-        <h3 class="saas-feature-title">Smart Analytics</h3>
-        <p class="saas-feature-text">Real-time insights into your store performance with actionable recommendations.</p>
+        <h3 class="vat-feature-title">Welcome Popup</h3>
+        <p class="vat-feature-text">Show new customers a popup to choose Business or Individual mode. They see excl. VAT or incl. VAT prices based on their selection.</p>
       </div>
 
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+      <!-- Feature 3 — Dynamic Prices (wide) -->
+      <div class="vat-feature-card vat-feature-card--wide">
+        <div class="vat-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
-        <h3 class="saas-feature-title">Fully Customizable</h3>
-        <p class="saas-feature-text">Match your brand perfectly with flexible design controls and theme integration.</p>
+        <div class="vat-feature-body">
+          <h3 class="vat-feature-title">Dynamic Price Updates Across All Pages</h3>
+          <p class="vat-feature-text">Prices update dynamically on product pages, collection pages, and the cart — all without a page reload. Your customers always see the correct price for their mode.</p>
+        </div>
       </div>
 
-      <div class="saas-feature-card">
-        <div class="saas-feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <!-- Feature 4 — Merchant Config -->
+      <div class="vat-feature-card">
+        <div class="vat-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
         </div>
-        <h3 class="saas-feature-title">Enterprise Security</h3>
-        <p class="saas-feature-text">Bank-level encryption and GDPR compliance. Your data is always safe with us.</p>
+        <h3 class="vat-feature-title">Merchant Customization</h3>
+        <p class="vat-feature-text">Set your tax rate, choose popup templates, customize colors, button text, and headings — all from the app settings panel.</p>
       </div>
+
+      <!-- Feature 5 — Zero Code -->
+      <div class="vat-feature-card">
+        <div class="vat-feature-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3 class="vat-feature-title">Zero-Code Integration</h3>
+        <p class="vat-feature-text">Theme App Extension enables drag-and-drop integration. No theme code editing required — works with any Shopify 2.0 theme.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "SaaS Features",
+  "name": "VAT Features",
   "tag": "section",
   "class": "section",
-  "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "title",
-      "default": "Built for Modern Merchants",
-      "label": "Heading"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        { "value": "h2", "label": "Small" },
-        { "value": "h1", "label": "Medium" },
-        { "value": "h0", "label": "Large" }
-      ],
-      "default": "h1",
-      "label": "Heading size"
-    },
-    {
-      "type": "richtext",
-      "id": "description",
-      "label": "Description"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "feature",
-      "name": "Feature",
-      "settings": [
-        {
-          "type": "html",
-          "id": "icon_svg",
-          "label": "Icon SVG (Optional)"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "default": "Feature Title",
-          "label": "Title"
-        },
-        {
-          "type": "textarea",
-          "id": "text",
-          "default": "Explain how this feature helps your customers achieve their goals.",
-          "label": "Description"
-        }
-      ]
-    }
-  ],
   "presets": [
-    {
-      "name": "SaaS Features",
-      "blocks": [
-        { "type": "feature" },
-        { "type": "feature" },
-        { "type": "feature" }
-      ]
-    }
+    { "name": "VAT Features" }
   ]
 }
 {% endschema %}

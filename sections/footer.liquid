@@ -6,26 +6,172 @@
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .footer {
-    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+  /* ===== VAT SWITCHER — DARK FOOTER ===== */
+  .vat-footer {
+    background: #080808;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 72px 0 32px;
+    font-family: 'Inter', system-ui, sans-serif;
   }
-
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  .vat-footer__top {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
   }
-
-  @media screen and (min-width: 750px) {
-    .footer {
-      margin-top: {{ section.settings.margin_top }}px;
-    }
-
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  .vat-footer__brand {}
+  .vat-footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .vat-footer__logo-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px; color: #fff;
+    box-shadow: 0 4px 12px rgba(249,115,22,0.35);
+    flex-shrink: 0;
+  }
+  .vat-footer__logo-name {
+    font-size: 15px; font-weight: 700; color: #F1F5F9; line-height: 1.2;
+  }
+  .vat-footer__logo-name span { color: #F97316; }
+  .vat-footer__desc {
+    font-size: 14px; color: #475569; line-height: 1.7; margin: 0 0 20px; max-width: 280px;
+  }
+  .vat-footer__shopify-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 9999px;
+    font-size: 12px; color: #64748B; font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .vat-footer__shopify-badge:hover {
+    border-color: rgba(249,115,22,0.3);
+    color: #F97316;
+  }
+  .vat-footer__shopify-badge svg { color: #95BF47; }
+  .vat-footer__col-title {
+    font-size: 12px; font-weight: 700; color: #F1F5F9;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin: 0 0 20px;
+  }
+  .vat-footer__links {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .vat-footer__links a {
+    font-size: 14px; color: #475569; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .vat-footer__links a:hover { color: #F97316; }
+  .vat-footer__bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .vat-footer__copy {
+    font-size: 13px; color: #334155;
+  }
+  .vat-footer__copy a { color: #475569; text-decoration: none; }
+  .vat-footer__copy a:hover { color: #F97316; }
+  .vat-footer__policies {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  .vat-footer__policies a {
+    font-size: 13px; color: #334155; text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .vat-footer__policies a:hover { color: #F97316; }
+  @media screen and (max-width: 989px) {
+    .vat-footer__top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .vat-footer__brand { grid-column: span 2; }
+  }
+  @media screen and (max-width: 749px) {
+    .vat-footer__top { grid-template-columns: 1fr; }
+    .vat-footer__brand { grid-column: span 1; }
+    .vat-footer__bottom { flex-direction: column; align-items: flex-start; }
   }
 {%- endstyle -%}
+
+<footer class="vat-footer" role="contentinfo">
+  <div class="page-width">
+    <div class="vat-footer__top">
+
+      <!-- Brand column -->
+      <div class="vat-footer__brand">
+        <a href="{{ routes.root_url }}" class="vat-footer__logo" aria-label="Ests Tax/Vat Switcher Home">
+          <div class="vat-footer__logo-icon" aria-hidden="true">TS</div>
+          <div class="vat-footer__logo-name">Ests Tax/<span>Vat</span> Switcher</div>
+        </a>
+        <p class="vat-footer__desc">
+          Switch between VAT incl/excl pricing for B2B &amp; B2C customers with a seamless storefront toggle. No code required.
+        </p>
+        <a href="https://apps.shopify.com/vat-switcher" class="vat-footer__shopify-badge" target="_blank" rel="noopener noreferrer" aria-label="View on Shopify App Store">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.337 23.979l4.663-1.004L15.337 0s-3.005 8.626-3.005 8.626c-.948-.285-1.934-.44-2.952-.44-4.63 0-8.38 3.75-8.38 8.38 0 4.63 3.75 8.38 8.38 8.38 1.018 0 2.004-.155 2.952-.44l3.005 8.626z"/></svg>
+          Available on Shopify App Store
+        </a>
+      </div>
+
+      <!-- App column -->
+      <div>
+        <h3 class="vat-footer__col-title">App</h3>
+        <ul class="vat-footer__links">
+          <li><a href="https://apps.shopify.com/vat-switcher" target="_blank" rel="noopener">Install App</a></li>
+          <li><a href="{{ routes.collections_url }}">Browse Products</a></li>
+          <li><a href="{{ routes.root_url }}">Demo Store</a></li>
+        </ul>
+      </div>
+
+      <!-- Features column -->
+      <div>
+        <h3 class="vat-footer__col-title">Features</h3>
+        <ul class="vat-footer__links">
+          <li><a href="{{ routes.root_url }}">VAT Toggle</a></li>
+          <li><a href="{{ routes.root_url }}">Welcome Popup</a></li>
+          <li><a href="{{ routes.root_url }}">B2B Pricing</a></li>
+          <li><a href="{{ routes.root_url }}">B2C Pricing</a></li>
+          <li><a href="{{ routes.root_url }}">Theme Extension</a></li>
+        </ul>
+      </div>
+
+      <!-- Support column -->
+      <div>
+        <h3 class="vat-footer__col-title">Support</h3>
+        <ul class="vat-footer__links">
+          <li><a href="{{ routes.root_url }}contact">Contact Us</a></li>
+          <li><a href="https://apps.shopify.com/vat-switcher#reviews" target="_blank" rel="noopener">Reviews</a></li>
+          <li><a href="{{ routes.root_url }}">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="vat-footer__bottom">
+      <div class="vat-footer__copy">
+        &copy; {{ 'now' | date: '%Y' }} <a href="{{ routes.root_url }}">{{ shop.name }}</a> &nbsp;&middot;&nbsp; Powered by Ests Apps
+      </div>
+      <div class="vat-footer__policies">
+        {%- for policy in shop.policies -%}
+          {%- if policy != blank -%}
+            <a href="{{ policy.url }}">{{ policy.title | escape }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</footer>
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
