@@ -6,7 +6,8 @@
         "headline": "Switch VAT Pricing Instantly for B2B & B2C",
         "subtext": "Ests Tax/VAT Switcher helps merchants display prices with or without VAT for both business and individual customers. Prices update instantly across product, collection, and cart pages.",
         "primary_cta_label": "Install App on Shopify",
-        "secondary_cta_label": "View Products"
+        "secondary_cta_label": "View Products",
+        "secondary_cta_url": "shopify://collections/all"
       }
     },
     "saas_features": {
