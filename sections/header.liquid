@@ -182,7 +182,27 @@
     padding-right: 0 !important;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .header__contact-btn {
+    background: transparent !important;
+    color: #94A3B8 !important;
+    padding: 10px 18px !important;
+    border-radius: 9999px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    white-space: nowrap !important;
+  }
+
+  .header__contact-btn:hover {
+    color: #F1F5F9 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
   }
 
   .header__install-btn {
@@ -217,9 +237,6 @@
     .header {
       gap: 16px !important;
     }
-    .header__vat-toggle {
-      display: none;
-    }
   }
 
   @media screen and (max-width: 749px) {
@@ -232,6 +249,9 @@
     }
     .vat-logo-tagline {
       display: none;
+    }
+    .header__contact-btn {
+      display: none !important;
     }
   }
 {%- endstyle -%}
@@ -266,10 +286,9 @@
     </nav>
 
     <div class="header__actions">
-      <div class="header__vat-toggle" role="group" aria-label="VAT mode selector">
-        <span class="vat-toggle-btn vat-toggle-btn--active">Business</span>
-        <span class="vat-toggle-btn vat-toggle-btn--inactive">Individual</span>
-      </div>
+      <a href="https://expoundcoderz.com/contact" class="header__contact-btn" target="_blank" rel="noopener noreferrer">
+        Contact Us
+      </a>
       <a href="https://apps.shopify.com/vat-switcher" class="header__install-btn" target="_blank" rel="noopener noreferrer">
         Install App
       </a>
