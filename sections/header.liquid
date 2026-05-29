@@ -276,11 +276,13 @@
     <nav class="header__inline-menu" aria-label="Main navigation">
       <ul class="header__menu-list" role="list">
         {%- for link in linklists[section.settings.menu].links -%}
-          <li>
-            <a href="{{ link.url }}" class="header__menu-item{% if link.active %} header__menu-item--active{% endif %}">
-              {{ link.title | escape }}
-            </a>
-          </li>
+          {%- unless link.title == 'Contact' or link.title == 'contact' -%}
+            <li>
+              <a href="{{ link.url }}" class="header__menu-item{% if link.active %} header__menu-item--active{% endif %}">
+                {{ link.title | escape }}
+              </a>
+            </li>
+          {%- endunless -%}
         {%- endfor -%}
       </ul>
     </nav>
