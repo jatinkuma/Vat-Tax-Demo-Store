@@ -1,111 +1,28 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Scale Your Store with Premium Solutions",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "The ultimate Shopify app for merchants who demand high conversion, modern design, and seamless performance.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Get Started",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "View Demo",
-            "button_link_2": "shopify://collections/all",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+    "vat_hero": {
+      "type": "main-index",
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-1",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
+        "headline": "Switch VAT Pricing Instantly for B2B & B2C",
+        "subtext": "Ests Tax/VAT Switcher helps merchants display prices with or without VAT for both business and individual customers. Prices update instantly across product, collection, and cart pages.",
+        "primary_cta_label": "Install App on Shopify",
+        "secondary_cta_label": "View Products"
       }
     },
     "saas_features": {
       "type": "saas-features",
-      "blocks": {
-        "f1": {
-          "type": "feature",
-          "settings": {
-            "icon_svg": "",
-            "title": "One-Click Installation",
-            "text": "Get up and running in minutes with our zero-config setup process designed for busy merchants."
-          }
-        },
-        "f2": {
-          "type": "feature",
-          "settings": {
-            "icon_svg": "",
-            "title": "Enterprise Security",
-            "text": "Your data is protected with SOC2 compliant infrastructure and end-to-end encryption."
-          }
-        },
-        "f3": {
-          "type": "feature",
-          "settings": {
-            "icon_svg": "",
-            "title": "24/7 Priority Support",
-            "text": "Our team of Shopify experts is always available to help you maximize your store's potential."
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3"
-      ],
-      "settings": {
-        "title": "Engineered for Growth",
-        "heading_size": "h1",
-        "description": ""
-      }
+      "settings": {}
+    },
+    "saas_showcase": {
+      "type": "saas-showcase",
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "beauty-products",
-        "products_to_show": 12,
-        "title": "Core Modules",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
+        "title": "Featured Products",
+        "heading_size": "h2",
+        "columns_desktop": 3,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
@@ -119,46 +36,25 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "saas_showcase": {
-      "type": "saas-showcase",
-      "blocks": {
-        "s1": {
-          "type": "showcase",
-          "settings": {
-            "title": "Deep Integration",
-            "text": "<p>Works seamlessly with your existing tech stack, from Klaviyo to Gorgias and everything in between.</p>",
-            "button_label": "View Integration →",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "s1"
-      ],
-      "settings": {
-        "title": "The Only Solution You'll Ever Need",
-        "heading_size": "h1"
-      }
+    "saas_benefits": {
+      "type": "saas-benefits",
+      "settings": {}
     },
     "saas_cta": {
       "type": "saas-cta",
-      "settings": {
-        "title": "Start Your 14-Day Free Trial",
-        "text": "Join the world's most successful Shopify stores today. No credit card required.",
-        "button_label": "Start Free Trial",
-        "button_link": ""
-      }
+      "settings": {}
     }
   },
   "order": [
-    "image_banner",
+    "vat_hero",
     "saas_features",
-    "featured_collection",
     "saas_showcase",
+    "featured_collection",
+    "saas_benefits",
     "saas_cta"
   ]
 }
