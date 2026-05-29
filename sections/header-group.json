@@ -38,6 +38,15 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "ests_tax_vat_switcher_app_block_ntgcQB": {
+          "type": "shopify://apps/ests-tax-vat-switcher/blocks/app-block/e3605b41-4db2-4ae4-bd16-c01f66731698",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ests_tax_vat_switcher_app_block_ntgcQB"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
